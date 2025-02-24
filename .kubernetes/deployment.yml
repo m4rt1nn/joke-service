@@ -20,3 +20,10 @@ spec:
         image: registry:5000/m4rt1nn/joke-service:latest
         ports:
         - containerPort: 5000
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
