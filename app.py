@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 import requests, certifi
 from flask_restx import Api, Resource, fields
+from flask_cors import CORS
 
 app = Flask(__name__)
 
@@ -11,6 +12,7 @@ joke_model = api.model('Joke', {
     'setup': fields.String(description='Question or setup of joke', required=True),
     'punchline': fields.String(description='Punchline or end of joke', required=True)
 })
+CORS(app)
 
 
 # Definiera en resurs för att hämta ett skämt
